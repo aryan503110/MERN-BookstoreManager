@@ -1,0 +1,114 @@
+.navbar {
+  background-color: #f8e5e5;  /* Light pink */
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar-link {
+  color: #7c5c5c;  /* Muted brown */
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover {
+  background-color: #e8b7b7;  /* Darker pink */
+  color: #4a3636;  /* Darker brown */
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: #7c5c5c;  /* Muted brown */
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.menu-button:hover {
+  color: #4a3636;  /* Darker brown */
+}
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fdf1f1;  /* Lighter pink */
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+
+  .navbar-link {
+    display: block;
+    padding: 0.75rem;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(124, 92, 92, 0.1);  /* Very light muted brown */
+  }
+
+  .navbar-link:hover {
+    background-color: #f8e5e5;  /* Light pink */
+  }
+
+  .navbar-link:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-button {
+    display: none;
+  }
+
+  .navbar-links {
+    display: flex !important;
+  }
+
+  .navbar-link {
+    position: relative;
+  }
+
+  .navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #e8b7b7;  /* Darker pink */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .navbar-link:hover::after {
+    width: 80%;
+  }
+}
