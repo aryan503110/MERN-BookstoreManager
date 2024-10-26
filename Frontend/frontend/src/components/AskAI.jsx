@@ -11,8 +11,8 @@ export default function App() {
  useEffect(() => {
    function GetAnswerFromAi() {
 
-
-     const apiKey = "AIzaSyBd6Ony4XoIkdIDDOoBx4TBdQM9-XiO0gM";
+// enter your API Key here
+     const apiKey = "";
      const genAI = new GoogleGenerativeAI(apiKey);
 
 
